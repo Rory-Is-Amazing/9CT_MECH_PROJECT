@@ -1,9 +1,14 @@
-#Requirements Outline
+# Requirements Outline
+### The Need 
+### Proposed Soloution
+### Key Actions
+### Functional Requirments
+### Test Case
+### Non-Functional Requirments
+# Design
 
-#Design
+# Development and Integration
 
-#Development and Integration
+# Testing and Debugging
 
-#Testing and Debugging
-
-#Evaluation
+# Evaluation
