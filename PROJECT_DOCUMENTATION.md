@@ -30,6 +30,47 @@ I will design an eletronic level, which through use of a set of LED lights, a bu
 
 
 # Design
+### Flow Chart
+![Image](Image.png)
+### Pseudo Code
+
+```
+BEGIN
+    WHILE true
+        READ switchs_on
+        If switchs_on == 3 THEN
+            red()
+        ELSE IF switchs_on == 2 THEN
+            yellow()
+        ELSE IF switchs_on == 1 THEN
+            green()
+        ELSE IF switchs_on == 0 THEN
+            blue()
+        ELSE
+            DISPLAY "Error."
+        ENDIF
+    ENDWHILE
+
+BEGIN red()
+    OUTPUT red_led.value(1)
+    OUTPUT speaker.on(freq.fastest)
+END red()
+
+BEGIN yellow()
+    OUTPUT yellow_led.value(1)
+    OUTPUT speaker.on(freq.faster)
+END yellow()
+
+BEGIN green()
+    OUTPUT green_led.value(1)
+    OUTPUT speaker.on(freq.slower)
+END green()
+
+BEGIN blue()
+    OUTPUT blue_led.value(1)
+    OUTPUT speaker.on(freq.slowest)
+END blue()
+```
 
 # Development and Integration
 
