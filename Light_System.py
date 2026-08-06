@@ -12,7 +12,7 @@ while True:  # Loop forever
     ledb.value(1)
     time.sleep(2) # Go to sleep for 2 seconds
         
-    ledr.value(0)  # Turn the LED OFF
+    ledr.value(0)
     ledy.value(0)
     ledg.value(0)
     ledb.value(0)

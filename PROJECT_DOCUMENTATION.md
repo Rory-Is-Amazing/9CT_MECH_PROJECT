@@ -96,13 +96,13 @@ My device is required to operate its function efficienly, through use of optemsi
 BEGIN
     WHILE true
         READ switchs_on
-        If switchs_on == 3 THEN
+        If switchs_on == 0 THEN
             red()
-        ELSE IF switchs_on == 2 THEN
-            yellow()
         ELSE IF switchs_on == 1 THEN
+            yellow()
+        ELSE IF switchs_on == 2 THEN
             green()
-        ELSE IF switchs_on == 0 THEN
+        ELSE IF switchs_on == 3 THEN
             blue()
         ELSE
             DISPLAY "Error."
