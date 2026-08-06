@@ -4,7 +4,7 @@ import time
 speaker = machine.PWM(machine.Pin(6)) # Set up the PWM pin (GP15)
 
 def main():
-    
+   pass
 
 def play_tone(frequency, duration):
     if frequency == 0:
@@ -16,14 +16,25 @@ def play_tone(frequency, duration):
     time.sleep(duration)
     speaker.duty_u16(0) # Turn off buzzer
 
+def red():
+    pass
+
+def yellow():
+    pass
+
+def green():
+    pass
+
+def blue():
+    pass
 while True:
     time.sleep(0.5)
     play_tone(3000,0.5)
 # G5
 
-# Always deinitialize PWM when done
 speaker.deinit()
 
 if __name__ == "__main__":
     main()
 
+# Always deinitialize PWM when done  
