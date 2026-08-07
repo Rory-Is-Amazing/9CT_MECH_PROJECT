@@ -11,15 +11,16 @@ ledy = Pin(13, Pin.OUT)
 ledg = Pin(14, Pin.OUT)
 ledb = Pin(15, Pin.OUT)
 
+ts1 = Pin(16, Pin.IN, Pin.PULL_DOWN)
+
 sensor1 = 0
 sensor2 = 1
 sensor3 = 1
 def main():
     while True:
-        #Sens
         sensor1 = 1
-        sensor2 = 17
-        sensor3 = 0
+        sensor2 = 1
+        sensor3 = 1
         
         ts = (sensor1 + sensor2 + sensor3)
         
@@ -37,6 +38,7 @@ def main():
             blue()
         else:
             print("Error.")
+            break
 
 def play_tone(frequency, duration):
     if frequency == 0:
@@ -50,20 +52,28 @@ def play_tone(frequency, duration):
 
 def red():
     print()
+    time.sleep(0.25)
     ledr.value(1)
-    time.sleep(2)
+    play_tone(1000,0.25)
+    time.sleep(0.25)
 def yellow():
     print('yellow')
+    time.sleep(0.125)
     ledy.value(1)
-    time.sleep(2)
+    play_tone(1000,0.125)
+    time.sleep(0.125)
 def green():
     print('green')
+    time.sleep(0.0625)
     ledg.value(1)
-    time.sleep(2)
+    play_tone(1000,0.0625)
+    time.sleep(0.0625)
 def blue():
     print('blue')
+    time.sleep(0.03125)
     ledb.value(1)
-    time.sleep(2)
+    play_tone(1000,0.03125)
+    time.sleep(0.03125)
 '''
 while True:
     time.sleep(0.5)
