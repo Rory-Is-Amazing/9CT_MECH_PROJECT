@@ -12,17 +12,13 @@ ledg = Pin(14, Pin.OUT)
 ledb = Pin(15, Pin.OUT)
 
 ts1 = Pin(16, Pin.IN, Pin.PULL_DOWN)
+ts2 = Pin(17, Pin.IN, Pin.PULL_DOWN)
+ts3 = Pin(18, Pin.IN, Pin.PULL_DOWN)
 
-sensor1 = 0
-sensor2 = 1
-sensor3 = 1
 def main():
     while True:
-        sensor1 = 1
-        sensor2 = 1
-        sensor3 = 1
         
-        ts = (sensor1 + sensor2 + sensor3)
+        ts = ts1.value() + ts2.value() + ts3.value()
         
         ledr.value(0)
         ledy.value(0)
@@ -85,3 +81,4 @@ if __name__ == "__main__":
     main()
 
 speaker.deinit()
+
