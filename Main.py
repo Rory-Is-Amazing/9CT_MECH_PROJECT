@@ -13,7 +13,10 @@ ts1 = Pin(17, Pin.IN, Pin.PULL_DOWN)
 ts2 = Pin(18, Pin.IN, Pin.PULL_DOWN)
 ts3 = Pin(20, Pin.IN, Pin.PULL_DOWN)
 
-sw = Pin(27, Pin.IN, Pin.PULL_UP)
+ledr.value(0)
+ledy.value(0)
+ledg.value(0)
+ledb.value(0)
 
 def play_tone(freq, dur):
     if freq == 0:
@@ -25,7 +28,6 @@ def play_tone(freq, dur):
     speaker.duty_u16(0)
 def main():
     while True:
-        if sw.value() == 0:
             ts = ts1.value() + ts2.value() + ts3.value()
 
             ledr.value(0)
@@ -54,16 +56,9 @@ def main():
                 time.sleep(0.03125)
             else:
                 print("Error: Invalid tilt sensor value")
-        elif sw.value() == 1:
-            ledr.value(0)
-            ledy.value(0)
-            ledg.value(0)
-            ledb.value(0)
-        else:
-            print("Error: Invalid switch value")
+
 
 if __name__ == "__main__":
     main()
 
 speaker.deinit()
-

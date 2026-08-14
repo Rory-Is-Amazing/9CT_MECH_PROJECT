@@ -19,4 +19,4 @@ while True:
     sts3 = stable_read(ts3)
 
     print(sts1, sts2, sts3, sts1 + sts2 + sts3)
-    time.sleep(0.05)
+    time.sleep(1)
