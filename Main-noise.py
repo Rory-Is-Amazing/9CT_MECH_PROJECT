@@ -13,14 +13,6 @@ ts3 = Pin(20, Pin.IN, Pin.PULL_DOWN)
 
 sw = Pin(27, Pin.IN, Pin.PULL_UP)
 
-def play_tone(freq, dur):
-    if freq == 0:
-        speaker.duty_u16(0)
-    else:
-        speaker.freq(freq)
-        speaker.duty_u16(32768)
-    time.sleep(dur)
-    speaker.duty_u16(0)
 def main():
     while True:
         if sw.value() == 0:
@@ -33,22 +25,18 @@ def main():
 
             if ts == 0:
                 ledr.value(1)
-                play_tone(1000, 0.25)
                 time.sleep(0.25)
 
             elif ts == 1:
                 ledy.value(1)
-                play_tone(1000, 0.125)
                 time.sleep(0.125)
 
             elif ts == 2:
                 ledg.value(1)
-                play_tone(1000, 0.0625)
                 time.sleep(0.0625)
 
             elif ts == 3:
                 ledb.value(1)
-                play_tone(1000, 0.03125)
                 time.sleep(0.03125)
             else:
                 print("Error: Invalid tilt sensor value")
@@ -62,6 +50,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-speaker.deinit()
 
