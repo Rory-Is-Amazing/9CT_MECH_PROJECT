@@ -60,32 +60,32 @@ If above 20°, Buzzer beeps every 0.5 seconds.
 ### Functional Requirments
 ### Tilt Switchs Input Functional Requirments:
 - The system will be required to read on/off state of all 3 tilt switches at a sampling interval of as low as 0.0625 seconds, up to 0.5 seconds
-- The system will be required to determine which of one of 4 angle ranges by combining on/off states of the 3 tilt switches
-- The system will be required to store the detected angle range for use by the LEDs and Buzzer subroutine
+- The system will be required to determine which of one of 4 angle ranges (A, B, C or D) by combining on/off states of the 3 tilt switches
+- The system will be required to store the detected angle range (A, B, C or D) for use by the LEDs and Buzzer subroutine
 #### LED Output Functional Requirments
-- The system will be required to turn on one of the 4 LEDs (red, yellow, green, and blue) based on the detected angle range. Blue for 0–5°, Green for 5–10°, Yellow for 10–20°, and Red for above 20°.
-- The system will be required to flash the active LED (red, yellow, green, or blue) at the assoociated interval for the detected range: 0.0625 seconds, 0.125 seconds, 0.25 seconds, or 0.5 seconds.
+- The system will be required to turn on one of the 4 LEDs (red, yellow, green, and blue) based on the detected angle range. Blue for 0–5° (D), Green for 5–10° (C), Yellow for 10–20° (B), and Red for above 20° (A).
+- The system will be required to flash the active LED (red, yellow, green, or blue) at the assoociated interval for the detected range : 0.0625 seconds (D), 0.125 seconds (C), 0.25 seconds (B), or 0.5 seconds (A).
 - The system will be required to flash the LED (red, yellow, green, or blue) synchronised with the buzzer timing for the same angle range.
 #### Buzzer Output Functional Requirments
-- The system will be required to create a beep whenever an angle range is detected
-- The system will be required to beep at the the assoociated interval for the detected range: 0.0625 seconds, 0.125 seconds, 0.25 seconds, or 0.5 seconds.
+- The system will be required to create a beep whenever an angle range (A, B, C or D) is detected
+- The system will be required to beep at the the assoociated interval for the detected range: 0.0625 seconds (D), 0.125 seconds (C), 0.25 seconds (B), or 0.5 seconds (A).
 - The system will be required to flash the buzzer synchronised with the LED timing for the same angle range.
 ### Test Case
 | Test Case | Input     | Expected Output   |
 |---------- |---------- |----------------   |
-| >20° angle of device tilt sensor reading | 0/3 Tilt Switches On | |
-| >10° angle of device tilt sensor reading | 1/3 Tilt Switches On | |
-| >5° angle of device tilt sensor reading| 2/3 Tilt Switches On|  |
-| <5° angle of device tilt sensor reading | 3/3 Tilt Switches On |  |
-| Red LED | Placeholder Value of 0 ( 0/3 tilt switchs on) | |
-| Yellow LED | Placeholder Value of 1 ( 1/3 tilt switchs on) | |
-| Green LED | Placeholder Value of 2 ( 2/3 tilt switchs on) | |
-| Blue LED | Placeholder Value of 3 ( 3/3 tilt switchs on) | |
-| Red LED Buzzer Equivalent | Placeholder Value of 0 ( 0/3 tilt switchs on) | |
-| Yellow LED Buzzer Equivalent | Placeholder Value of 1 ( 1/3 tilt switchs on) | |
-| Green LED Buzzer Equivalent | Placeholder Value of 2 ( 2/3 tilt switchs on) | |
-| Blue LED Buzzer Equivalent | Placeholder Value of 3 ( 3/3 tilt switchs on) | |
-| Syncronization | | |
+| >20° angle of device tilt sensor reading (Angle Range A) | 0/3 Tilt Switches On | System identifies |
+| >10° angle of device tilt sensor reading (Angle Range B) | 1/3 Tilt Switches On | |
+| >5° angle of device tilt sensor reading (Angle Range C) | 2/3 Tilt Switches On|  |
+| <5° angle of device tilt sensor reading (Angle Range D) | 3/3 Tilt Switches On |  |
+| LED Output for Placeholder Range  | System Receives Placeholder Value of range A ( 0/3 tilt switchs on) | |
+| LED Output for Placeholder Range | System Receives Placeholder Value of range B ( 1/3 tilt switchs on) | |
+| LED Output for Placeholder Range | System Receives Placeholder Value of range C ( 2/3 tilt switchs on) | |
+| LED Output for Placeholder Range | System Receives Placeholder Value of range D ( 3/3 tilt switchs on) | |
+| Buzzer Output for Placeholder Range | System Receives Placeholder Value of range of A ( 0/3 tilt switchs on) | |
+| Buzzer Output for Placeholder Range | System Receives Placeholder Value of range of B ( 1/3 tilt switchs on) | |
+| Buzzer Output for Placeholder Range | System Receives Placeholder Value ofrange of C ( 2/3 tilt switchs on) | |/
+| Buzzer Output for Placeholder Range | System Receives Placeholder Value of range D ( 3/3 tilt switchs on) | |
+| Full System Combined Behaviour | | |
 | | | |
 | | | |
 | | | |
@@ -327,3 +327,4 @@ Plus, Minus, Implication
 
 ++
 
+# Github Commits (Replacement of Lacking Commits)
