@@ -37,24 +37,24 @@ I will design an eletronic level, which through use of a Raspberry Pi Pico Micro
 #### Action 2 - LEDs (Red, Yellow, Green, and Blue)
 LEDs light up depending on angle range provided by tilt switches:
 
-If between 0-5°, Blue LED beeps every 0.0625 seconds.
+If between 0-5° (Angle Range D), Blue LED beeps every 0.0625 seconds.
 
-If between 5-10°, Green LED beeps every 0.125 seconds.
+If between 5-10° (Angle Range C), Green LED beeps every 0.125 seconds.
 
-if between 10-20°, Yellow LED beeps every 0.25 seconds.
+if between 10-20° (Angle Range B), Yellow LED beeps every 0.25 seconds.
 
-If above 20°, Red LED beeps every 0.5 seconds.
+If above 20° (Angle Range A), Red LED beeps every 0.5 seconds.
 
 #### Action 3 - Buzzer
 Simlilarily to LEDs, buzzer beeps depending on angle range provided by tilt switches, staying in time with LEDs:
 
-If between 0-5°, Buzzer beeps every 0.0625 seconds.
+If between 0-5° (D), Buzzer beeps every 0.0625 seconds.
 
-If between 5-10°, Buzzer beeps every 0.125 seconds.
+If between 5-10° (C), Buzzer beeps every 0.125 seconds.
 
-if between 10-20°, Buzzer beeps every 0.25 seconds.
+if between 10-20°(B), Buzzer beeps every 0.25 seconds.
 
-If above 20°, Buzzer beeps every 0.5 seconds.
+If above 20° (A), Buzzer beeps every 0.5 seconds.
 
 
 ### Functional Requirments
@@ -73,46 +73,40 @@ If above 20°, Buzzer beeps every 0.5 seconds.
 ### Test Case
 | Test Case | Input     | Expected Output   |
 |---------- |---------- |----------------   |
-| >20° angle of device tilt sensor reading (Angle Range A) | 0/3 Tilt Switches On | System identifies |
-| >10° angle of device tilt sensor reading (Angle Range B) | 1/3 Tilt Switches On | |
-| >5° angle of device tilt sensor reading (Angle Range C) | 2/3 Tilt Switches On|  |
-| <5° angle of device tilt sensor reading (Angle Range D) | 3/3 Tilt Switches On |  |
-| LED Output for Placeholder Range  | System Receives Placeholder Value of range A ( 0/3 tilt switchs on) | |
-| LED Output for Placeholder Range | System Receives Placeholder Value of range B ( 1/3 tilt switchs on) | |
-| LED Output for Placeholder Range | System Receives Placeholder Value of range C ( 2/3 tilt switchs on) | |
-| LED Output for Placeholder Range | System Receives Placeholder Value of range D ( 3/3 tilt switchs on) | |
-| Buzzer Output for Placeholder Range | System Receives Placeholder Value of range of A ( 0/3 tilt switchs on) | |
-| Buzzer Output for Placeholder Range | System Receives Placeholder Value of range of B ( 1/3 tilt switchs on) | |
-| Buzzer Output for Placeholder Range | System Receives Placeholder Value ofrange of C ( 2/3 tilt switchs on) | |/
-| Buzzer Output for Placeholder Range | System Receives Placeholder Value of range D ( 3/3 tilt switchs on) | |
-| Full System Combined Behaviour | | |
-| | | |
-| | | |
-| | | |
-| | | |
-| | | |
+| >20° angle of device tilt sensor reading (Angle Range A) | 0/3 Tilt Switches On | System reads tilt switch states, identifying the ON/OFF patern to associated angle range (>20°) |
+| 10-20° angle of device tilt sensor reading (Angle Range B) | 1/3 Tilt Switches On | System reads tilt switch states, identifying the ON/OFF patern to associated angle range (10-20°) |
+| 5-10° angle of device tilt sensor reading (Angle Range C) | 2/3 Tilt Switches On| System reads tilt switch states, identifying the ON/OFF patern to associated angle range (5-10°) |
+| 0-5° angle of device tilt sensor reading (Angle Range D) | 3/3 Tilt Switches On | System reads tilt switch states, identifying the ON/OFF patern to associated angle range (0-5°) |
+| LED Output for Placeholder Range A | System Receives Placeholder Value of range A ( 0/3 tilt switchs on) | System turns on Red LED and flashes LED every 0.5 |
+| LED Output for Placeholder Range B | System Receives Placeholder Value of range B ( 1/3 tilt switchs on) | System turns on Yellow LED and flashes LED every 0.25 |
+| LED Output for Placeholder Range C | System Receives Placeholder Value of range C ( 2/3 tilt switchs on) | System turns on Green LED and flashes LED every 0.125 |
+| LED Output for Placeholder Range D | System Receives Placeholder Value of range D ( 3/3 tilt switchs on) | System turns on Blue LED and flashes LED every 0.0625 |
+| Buzzer Output for Placeholder Range A | System Receives Placeholder Value of range of A ( 0/3 tilt switchs on) | System activates buzzer and beeps at a 0.5 second interval |
+| Buzzer Output for Placeholder Range B | System Receives Placeholder Value of range of B ( 1/3 tilt switchs on) | System activates buzzer and beeps at a 0.25 second interval |
+| Buzzer Output for Placeholder Range C | System Receives Placeholder Value ofrange of C ( 2/3 tilt switchs on) | System activates buzzer and beeps at a 0.125 second interval |
+| Buzzer Output for Placeholder Range D | System Receives Placeholder Value of range D ( 3/3 tilt switchs on) | System activates buzzer and beeps at a 0.0625 second interval |
+| LED and Buzzer Synchronised Output for Placeholder Range A | System Receives Placeholder Value of range A ( 3/3 tilt switchs on) | System activates buzzer and Red LED and beeps/flashes at a 0.5 second interval |
+| LED and Buzzer Synchronised Output for Placeholder Range B | System Receives Placeholder Value of range B ( 3/3 tilt switchs on) | System activates buzzer and Yellow LED and beeps/flashes at a 0.25 second interval |
+| LED and Buzzer Synchronised Output for Placeholder Range C | System Receives Placeholder Value of range C ( 3/3 tilt switchs on) | System activates buzzer and Green LED and beeps/flashes at a 0.125 second interval |
+| LED and Buzzer Synchronised Output for Placeholder Range D | System Receives Placeholder Value of range D ( 3/3 tilt switchs on) | System activates buzzer and Blue LED and beeps/flashes at a 0.0625 second interval |
+| Full System Combined Behaviour for >20° angle of device | 0/3 Tilt Switches On | System activates buzzer and Red LED and beeps/flashes at a 0.5 second interval |
+| Full System Combined Behaviour for 10-20° angle of device | 1/3 Tilt Switches On | System activates buzzer and Yellow LED and beeps/flashes at a 0.25 second interval |
+| Full System Combined Behaviour for 5-10° angle of device | 2/3 Tilt Switches On | System activates buzzer and Green LED and beeps/flashes at a 0.125 second interval |
+| Full System Combined Behaviour for 0-5° angle of device | 3/3 Tilt Switches On | System activates buzzer and Blue LED and beeps/flashes at a 0.0625 second interval |
 ### Non-Functional Requirments
-**Efficiency:**
+#### Efficiency:
+- The system will run code that is written to minimise unnecessary processing, ensuring that tilt‑switch readings, LED control, and buzzer output are handled efficiently
+- My system will be required to maintain stable connection with inputs, to keep up with speed of outputs and computation. 
+- My system will be required to update outputs without causing noticeable/observable lag or missed cycles, over longer periods of operation.
 
-My device is required to operate its function efficienly, through use of optemsied code.
+#### Response Time:
+- My system will be required to respond to changes in tilt switch states immediatly after receiving input, providing an output by updating the LEDs and buzzer.
+- My system will take input from tilt switches at a sampling interval appropriate to the detected angle range (0.5, 0.25, 0.125, 0.0625)
 
-++
-
-++
-
-++
-
-**Response Time** - My device is to take input every ≈0.1 seconds, and outputing immediatly
-
-++
-
-++
-
-++
-
-**Accuracy** - My devices input accuracy will be composd of my combined sensors which will be able to detect changes at 5° intervals 
-
-++
+#### Accuracy:
+- The system will be required to correctly interpret the ON/OFF states of the 3 tilt switches, and calculate the correct angle range, being able to accuratly repeat this step many times a second, over an extended period of time.
+- The system will produce LED and buzzer outputs that match the calculated angle range with no incorrect activation.
+- The system will maintain synchronisation between LED flashes and buzzer beeps, accuratly over an extended period of time.
 
 ++
 
@@ -120,12 +114,12 @@ My device is required to operate its function efficienly, through use of optemsi
 
 
 # Design
-### Flow Chart 
+### Flow Charts: 
 #### Main Function, 4 Output Functions
 ![Main Function, 4 Output Functions](Main-Function,-and-4-Output-Functions.png)
 #### Speaker Function
 ![Speaker Function](Speaker-Function.png)
-### Pseudo Code
+### Pseudo Code:
 #### Main Function, 4 Output Functions, Speaker Function
 ```
 BEGIN play_tone(frequency, length)
@@ -185,7 +179,7 @@ END blue()
 ## First Attempt
 # Testing and Debugging
 ## Test Cases
-### Test Case 1 - <5° angle of device
+### Test Case 1 - Tilt Sensor Input
 #### Plan Outline
 ++
 
@@ -200,7 +194,7 @@ END blue()
 
 ++
 
-### Test Case 2 - >5° angle of device
+### Test Case 2 - LED Output (Talk about all 4,)
 #### Plan Outline
 ++
 
@@ -215,7 +209,7 @@ END blue()
 
 ++
 
-### Test Case 3 - >10° angle of device
+### Test Case 3 - Buzzer Output (Talk about Function)
 #### Plan Outline
 ++
 
@@ -230,7 +224,7 @@ END blue()
 
 ++
 
-### Test Case 4 - >20° angle of device
+### Test Case 4 - Combination of input and outputs (talk about syncing)
 #### Plan Outline
 ++
 
@@ -250,9 +244,9 @@ Working Product Video -> Attached Seperately in the google classroom turn in
 
 Thonny / VS Code files and folder structure -> Attached to google classroom turn in
 
-Test Cases -> Attached above in documentation
+Test Cases -> Attached above in PROJECT_DOCUMENTATION
 
-Commits -> Github & above in documentation
+Commits -> Github & below in PROJECT_DOCUMENTATION
 # Evaluation
 ## Peer Evaluation
 Plus, Minus, Implication
