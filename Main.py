@@ -1,10 +1,10 @@
- #Sets up Libarries
+#Sets up Libarries
 import machine
 import time
 from machine import Pin
 
-speaker = machine.PWM(machine.Pin(6)) #Set up the speaker
-#                  ^ Sets up as PWM
+buzzer = machine.PWM(machine.Pin(6)) #Set up the buzzer
+#                  ^ Sets up as PWM, to allow for frquency change
 ledr = Pin(12, Pin.OUT) #Set up the LEDs as outputs
 ledy = Pin(13, Pin.OUT)
 ledg = Pin(14, Pin.OUT)
@@ -25,12 +25,12 @@ at the chosen frequency and amount of time declared elsewhere then turn it off.
 '''
 def play_tone(frequency, length):
     if frequency == 0:
-        speaker.duty_u16(0) # Setting duty to 0 turns the speaker OFF
+        buzzer.duty_u16(0) # Setting duty to 0 turns the buzzer OFF
     else:
-        speaker.freq(frequency) #Set the speaker to the frequency passed in by external code
-        speaker.duty_u16(32768) #50% volume
+        buzzer.freq(frequency) #Set the buzzer to the frequency passed in by external code
+        buzzer.duty_u16(32768) #50% volume
     time.sleep(length) #puase for time passed in by external code
-    speaker.duty_u16(0) # Setting duty to 0 turns the speaker OFF
+    buzzer.duty_u16(0) # Setting duty to zero turns the buzzer OFF
     
 def main():
     while True:

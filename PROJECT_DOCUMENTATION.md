@@ -58,7 +58,7 @@ If above 20° (A), Buzzer beeps every 0.5 seconds.
 
 
 ### Functional Requirments
-### Tilt Switchs Input Functional Requirments:
+#### Tilt Switchs Input Functional Requirments:
 - The system will be required to read on/off state of all 3 tilt switches at a sampling interval of as low as 0.0625 seconds, up to 0.5 seconds
 - The system will be required to determine which of one of 4 angle ranges (A, B, C or D) by combining on/off states of the 3 tilt switches
 - The system will be required to store the detected angle range (A, B, C or D) for use by the LEDs and Buzzer subroutine
@@ -107,10 +107,6 @@ If above 20° (A), Buzzer beeps every 0.5 seconds.
 - The system will be required to correctly interpret the ON/OFF states of the 3 tilt switches, and calculate the correct angle range, being able to accuratly repeat this step many times a second, over an extended period of time.
 - The system will produce LED and buzzer outputs that match the calculated angle range with no incorrect activation.
 - The system will maintain synchronisation between LED flashes and buzzer beeps, accuratly over an extended period of time.
-
-++
-
-++
 
 
 # Design
@@ -173,13 +169,13 @@ END blue()
 ```
 
 # Development and Integration
-## Documentation Reveiw
 ## Prototype
-### Code & Comments
-## First Attempt
+```
+```
+
 # Testing and Debugging
 ## Test Cases
-### Test Case 1 - Tilt Sensor Input
+### Test Case 1 - Tilt Sensor Input (All 3 Tilt Switches)
 #### Plan Outline
 ++
 
@@ -194,7 +190,7 @@ END blue()
 
 ++
 
-### Test Case 2 - LED Output (Talk about all 4,)
+### Test Case 2 - LED Outputs (Red, Yellow, Green, Blue LEDs)
 #### Plan Outline
 ++
 
@@ -209,7 +205,7 @@ END blue()
 
 ++
 
-### Test Case 3 - Buzzer Output (Talk about Function)
+### Test Case 3 - Buzzer Output
 #### Plan Outline
 ++
 
@@ -224,7 +220,22 @@ END blue()
 
 ++
 
-### Test Case 4 - Combination of input and outputs (talk about syncing)
+### Test Case 4 - Combination of Buzzer and LED Ouputs
+#### Plan Outline
+++
+
+++
+#### Code Adjustment and Testing
+#### Evaluation
+++
+
+++
+
+++
+
+++
+
+### Test Case 4 - Combined behaviour of all Inputs and Outputs of Buzzer and LED Ouputs
 #### Plan Outline
 ++
 
@@ -244,29 +255,21 @@ Working Product Video -> Attached Seperately in the google classroom turn in
 
 Thonny / VS Code files and folder structure -> Attached to google classroom turn in
 
-Test Cases -> Attached above in PROJECT_DOCUMENTATION
+Test Cases -> Attached above in PROJECT_DOCUMENTATION, "
 
-Commits -> Github & below in PROJECT_DOCUMENTATION
+Commits -> Github & below in PROJECT_DOCUMENTATION, "
 # Evaluation
 ## Peer Evaluation
 Plus, Minus, Implication
 ### PMI 1
 | Plus | Minus | Implication |
 |---------- |---------- |----------------   |
-|Peer Plus | Peer Minus | Peer Implication |
+| Program works very well and meets the requirement outline very well. The code functions perfectly and is highly efficient, without any excess code. The inclusion of external sensors is executed very well. The use of the buzzer and the different speeds it buzzes at as well as the combination of the different LED is used together seamlessly and is very satisfying to use.| The only issues with the program is the switches faces certain issues like it gets stuck at certain points, creating a small inconvenience. | In future, the system could be improved simply by implementing more efficient sensors. |
 ### PMI 2
 | Plus | Minus | Implication |
 |---------- |---------- |----------------   |
 |Peer Plus | Peer Minus | Peer Implication |
 ## Self Evaluation
-++
-
-++
-
-++
-
-++
-
 ### Functional Criteria Evaluation
 ++
 
